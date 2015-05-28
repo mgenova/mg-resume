@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Resume</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,900,900italic,700italic%7COswald:400,300,700" rel="stylesheet" type="text/css">
+
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+
+    </head>
+    <body>
+        
+        <div class="main-content">
+            <div class="container no-padding">
+                <div class="row">
+                    <div class="col-md-3 l-content">
+                        <div class="profile-pic">
+                            <div class="pic-bg">
+                                <img src="images/mg.png" class="img-responsive">
+                            </div>
+                        
+                        </div>
+                        <nav>
+                             <ul class="navigation">
+                                  <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
+                                  <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+                                  <li><a href="#skills"><i class="fa fa-graduation-cap"> Skills</i></a></li>
+                                  <li><a href="#jobs"><i class="fa fa-briefcase"></i> Employment</a></li>
+                                  <li><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>     
+                            </ul>
+                        </nav>
+                    </div> <!--/col-md-3 -->
+                    
+                    
+                    <div class="col-md-9 r-content">
+                        <!-- each angular controller applies a different class here -->
+                        <div class="page {{ pageClass }}" ng-view></div>
+        
+                    </div> <!--/col-md-9 -->
+                </div> <!--row -->
+       
+        
+           
+        
+        
+            
+            </div> <!--/container no-padding-->
+         </div> <!--/main-content-->    
+       
+        <footer>
+             <div class="social">
+                 <a href="https://plus.google.com/u/0/102777391215132047871/posts" class="googleplus"><i class="fa fa-google-plus-square"></i></a>
+                 <a href="https://www.linkedin.com/in/margagenova" class="linkedin"><i class="fa fa-linkedin-square"></i></a>   
+                 <a href="https://github.com/mgenova" class="github"><i class="fa fa-github-square"></i></a>
+             </div>
+
+             <div class="copyright"><i class="fa fa-copyright"></i> Marga Genova <br>
+                    All Rights Reserved.
+             </div>
+        </footer>
+        
+        
+        <script src="scripts/angular.min.js"></script>
+        <script src="scripts/angular-route.min.js"></script>
+        <script src="scripts/angular-animate.min.js"></script>
+
+        <script src="app/app.js"></script> 
+        <script src="app/home/HomeController.js"></script>
+        <script src="app/about/AboutController.js"></script>
+        <script src="app/contact/ContactController.js"></script>
+        <script src="app/hobbies/HobbiesController.js"></script>
+        <script src="app/jobs/JobsController.js"></script>
+        <script src="app/skills/SkillsController.js"></script>
+
+
+
+    </body>
+</html>

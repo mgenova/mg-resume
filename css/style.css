@@ -1,0 +1,30 @@
+@import url('normalize.css');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #818181;
+    line-height: 22px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: #000;
+}
+
+a {
+    color: #818181;
+    text-decoration: none;
+    transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -webkit-transition-duration: .2s;
+    -o-transition-duration: .2s;
+}
+a:hover {
+    color: #7dba5c;
+}
+
+.r-content {
+    float: right;
+}
