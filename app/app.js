@@ -1,38 +1,59 @@
 (function(){
     
     var myApp = angular.module('myApp', ['ngRoute', 'ngAnimate']);
-
+    
+    
     myApp.config(function($routeProvider){
 
        $routeProvider 
        .when('/about/', {
            templateUrl: 'app/about/about.html',
-           controller: 'AboutController'
+           controller: 'AboutController',
+           activetab: 'about'
+           
         })
        .when('/contact/', {
            templateUrl: 'app/contact/contact.html',
-           controller: 'ContactController'
+           controller: 'ContactController',
+           activetab: 'contact'
+           
         })
        .when('/hobbies/', {
            templateUrl: 'app/hobbies/hobbies.html',
-           controller: 'HobbiesController'
+           controller: 'HobbiesController',
+           activetab: 'hobbies'
+           
         })
         .when('/home/', {
            templateUrl: 'app/home/home.html',
-           controller: 'HomeController'
+           controller: 'HomeController',
+           activetab: 'home'
+           
         })
        .when('/jobs/', {
            templateUrl: 'app/jobs/jobs.html',
-           controller: 'JobsController'
+           controller: 'JobsController',
+           activetab: 'jobs'
+          
         })
        .when('/skills/', {
            templateUrl: 'app/skills/skills.html',
-           controller: 'SkillsController'
+           controller: 'SkillsController',
+           activetab: 'skills'
+           
         })
-        .otherwise({redirectTo:'/'});
+        .otherwise({redirectTo:'/home'
+        })
    });
 
-        
+    
+    
+    
+    
+    
+    
+    
+    
     // CONTROLLERS ============================================
     // Each controller will have its own pageClass variable,
     // which will be able to apply diffrent animations to each 
@@ -70,8 +91,16 @@
         $scope.pageClass = 'page-skills';
     });
 
+   
+    
+    myApp.controller('MainController', function($scope){
+        $scope.activetab = '';
         
-        
+        $scope.updateTab = function(tab){
+            $scope.activetab = tab;
+            console.log(tab);  
+        };
+    });
         
         
 }());

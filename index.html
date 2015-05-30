@@ -2,56 +2,57 @@
 <html ng-app="myApp">
     <head>
         <title>Resume</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+     
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" >
         <link href="http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,900,900italic,700italic%7COswald:400,300,700" rel="stylesheet" type="text/css">
-
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        
+       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> 
+       <!-- <link href="css/style.css" rel="stylesheet" type="text/css" />-->
+        <link href="css/test.css" rel="stylesheet" type="text/css" />
 
 
 
     </head>
-    <body>
+    <body ng-controller="MainController">
+      <section id="main" class="container">
+        <div class="row">
+              <aside id="aside" class="col-md-3 pull-left">    
+                <nav>
+                      <ul>
+                          <li><a ng-class="{active: activetab === 'home'}" href="#home" ng-click="updateTab('home')"><i class="fa fa-home"></i> Home</a></li>
+                          <li><a ng-class="{active: activetab === 'about'}" href="#about" ng-click="updateTab('about')"><i class="fa fa-user"></i> About</a></li>
+                          <li><a ng-class="{active: activetab === 'skills'}" href="#skills" ng-click="updateTab('skills')"><i class="fa fa-graduation-cap"></i> Skills</a></li>
+                          <li><a ng-class="{active: activetab === 'jobs'}" href="#jobs" ng-click="updateTab('jobs')"><i class="fa fa-briefcase"></i> Employment</a></li>
+                          <li><a ng-class="{active: activetab === 'contact'}" href="#contact" ng-click="updateTab('contact')"><i class="fa fa-envelope"></i> Contact</a></li>     
+                      </ul>
+                  </nav>
+              </aside>
+
+
+
+              <main id="content" class="col-md-9 pull-right">
+
+                <!-- each angular controller applies a different class here -->
+                <div class="page {{ pageClass }}" ng-view></div>
+              </main>
+        </div> <!-- /row -->
+      </section>                          
         
-        <div class="main-content">
-            <div class="container no-padding">
-                <div class="row">
-                    <div class="col-md-3 l-content">
-                        <div class="profile-pic">
-                            <div class="pic-bg">
-                                <img src="images/mg.png" class="img-responsive">
-                            </div>
+
+
+
+
+
+
+
+
+
+
                         
-                        </div>
-                        <nav>
-                             <ul class="navigation">
-                                  <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-                                  <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
-                                  <li><a href="#skills"><i class="fa fa-graduation-cap"> Skills</i></a></li>
-                                  <li><a href="#jobs"><i class="fa fa-briefcase"></i> Employment</a></li>
-                                  <li><a href="#contact"><i class="fa fa-envelope"></i> Contact</a></li>     
-                            </ul>
-                        </nav>
-                    </div> <!--/col-md-3 -->
-                    
-                    
-                    <div class="col-md-9 r-content">
-                        <!-- each angular controller applies a different class here -->
-                        <div class="page {{ pageClass }}" ng-view></div>
-        
-                    </div> <!--/col-md-9 -->
-                </div> <!--row -->
-       
-        
-           
         
         
             
-            </div> <!--/container no-padding-->
-         </div> <!--/main-content-->    
-       
+<!--       
         <footer>
              <div class="social">
                  <a href="https://plus.google.com/u/0/102777391215132047871/posts" class="googleplus"><i class="fa fa-google-plus-square"></i></a>
@@ -63,7 +64,7 @@
                     All Rights Reserved.
              </div>
         </footer>
-        
+-->        
         
         <script src="scripts/angular.min.js"></script>
         <script src="scripts/angular-route.min.js"></script>
