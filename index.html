@@ -11,12 +11,15 @@
         <link href="css/test.css" rel="stylesheet" type="text/css" />
 
 
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 
     </head>
+    <!--
+    
     <body ng-controller="MainController">
       <section id="main" class="container">
         <div class="row">
-              <aside id="aside" class="col-md-3 pull-left">    
+              <aside id="aside" class="col-md-3">    
                 <nav>
                       <ul>
                           <li><a ng-class="{active: activetab === 'home'}" href="#home" ng-click="updateTab('home')"><i class="fa fa-home"></i> Home</a></li>
@@ -30,18 +33,58 @@
 
 
 
-              <main id="content" class="col-md-9 pull-right">
+              <main id="content" class="col-md-9">
 
-                <!-- each angular controller applies a different class here -->
+                <!-- each angular controller applies a different class here 
                 <div class="page {{ pageClass }}" ng-view></div>
               </main>
-        </div> <!-- /row -->
+        </div> <!-- /row 
       </section>                          
         
+-->
+
+<body ng-controller="MainController">
+      <main id="body" class="width">
+              
+          <aside id="sidebar" class="column-left">    
+                <nav id="mainnav">
+                      <ul>
+                          <li><a ng-class="{active: activetab === 'home'}" href="#home" ng-click="updateTab('home')"><i class="fa fa-home"></i>Home</a></li>
+                          <li><a ng-class="{active: activetab === 'about'}" href="#about" ng-click="updateTab('about')"><i class="fa fa-user"></i> About</a></li>
+                          <li><a ng-class="{active: activetab === 'skills'}" href="#skills" ng-click="updateTab('skills')"><i class="fa fa-graduation-cap"></i> Skills</a></li>
+                          <li><a ng-class="{active: activetab === 'jobs'}" href="#jobs" ng-click="updateTab('jobs')"><i class="fa fa-briefcase"></i> Employment</a></li>
+                          <li><a ng-class="{active: activetab === 'contact'}" href="#contact" ng-click="updateTab('contact')"><i class="fa fa-envelope"></i> Contact</a></li>     
+                      </ul>
+                  </nav>
+              </aside>
 
 
 
+              <section id="main" class="column-right">
+                  <div id="content">
+                      <div class ="box" id="box">
+                            <div class="in" id="in">
+                              <ng-view></ng-view>
 
+                          
+                          </div>
+                      
+                      </div>
+                  
+                  </div>
+
+                <!-- each angular controller applies a different class here -->
+                <div class="page {{ pageClass }}"></div>
+                
+                     
+                     
+                     </section>
+      </main>                          
+    
+    
+    
+    
+    
 
 
 
